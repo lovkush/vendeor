@@ -1,0 +1,97 @@
+
+<div class="container" style="padding-top:50px">
+  <div class="row">
+    <div class="col-md-12">
+		@if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+		<table id="cart" class="table table-hover">
+  <thead>
+    <tr>
+	  <th scope="col">Image</th>
+      <th scope="col">Product</th>
+		<th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Subtotal</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+	  <?php $total = 0 ?>
+	  @if(session('cart'))
+            @foreach(session('cart') as $id => $details)
+	  <?php $total += $details['price'] * $details['quantity'] ?>
+    <tr>
+      <th scope="row">
+                            <img src="{{asset('shop_filter/./images/'.'/'.$details['photo'])}}" width="100" height="100" class="img-responsive"/>
+                           
+                        </th>
+		<td>{{ $details['name'] }}</td>
+      <td>&#8377 {{ $details['price'] }}</td>
+      <td> <input type="number" value="{{ $details['quantity'] }}" data-id="{{ $id }}" id="update-cart" class="form-control quantity  "   />
+		</td>
+       
+      <td>&#8377 {{ $details['price'] * $details['quantity'] }}</td>
+     <!-- <td> <button class="btn btn-info btn-sm update-cart" data-id="{{ $id }}"><i class="fa fa-refresh"></i></button>
+		</td>-->
+		<td><button class="btn btn-danger btn-sm remove-from-cart" data-id="{{ $id }}"><i class="fa fa-trash-o"></i>Delete</button></td>
+	  </tr>
+	  @endforeach
+        @endif
+
+  </tbody>
+			<tfoot>
+        <tr class="visible-xs">
+            <td class="text-center"><strong>Total {{ $total }}</strong></td>
+        </tr>
+        <tr>
+            <td><a href="{{ url('/') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td colspan="2" class="hidden-xs"></td>
+            <td class="hidden-xs text-center"><strong>Total &#8377 {{ $total }}</strong></td>
+        </tr>
+        </tfoot>
+</table>
+</div>
+	</div>
+</div>
+@section('scripts')
+    <script type="text/javascript">
+
+        $("#update-cart").click(function (e) {
+           e.preventDefault();
+
+           var ele = $(this);
+
+            $.ajax({
+               url: '{{ url('update-cart') }}',
+               method: "patch",
+               data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id"), quantity: ele.parents("tr").find(".quantity").val()},
+               success: function (response) {
+                   window.location.reload();
+               }
+            });
+        });
+
+        $(".remove-from-cart").click(function (e) {
+            e.preventDefault();
+
+            var ele = $(this);
+
+            if(confirm("Are you sure")) {
+                $.ajax({
+                    url: '{{ url('remove-from-cart') }}',
+                    method: "DELETE",
+                    data: {_token: '{{ csrf_token() }}', id: ele.attr("data-id")},
+                    success: function (response) {
+                        window.location.reload();
+                    }
+                });
+            }
+        });
+
+    </script>
+
+@endsection
+@include('e-shop/footer_shop')
