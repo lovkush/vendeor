@@ -665,7 +665,7 @@ $('select[name="area_name"]').empty();
     
     
     <!-- ***** Welcome Slides Area Start ***** -->
-    <section class="welcome_area home-2" style="height:50%">
+    <section class="welcome_area home-2" style="height:50%" style="width:50%">
         <div class="welcome_slides" >
 
             <!-- Single Slide Start -->
