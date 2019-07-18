@@ -24,16 +24,15 @@
 <!-- ***** Header Area Start ***** -->
     <header class="header_area">
         <!-- Top Header Area Start -->
-        <div class="top_header_area">
+        <!-- <div class="top_header_area">
             <div class="container h-100">
                 <div class="row d-md-flex h-100 align-items-center">
                     <div class="col-12 col-md-6">
                         <div class="top_single_area d-sm-flex align-items-center">
-                            <!-- Top Mail Area Start -->
-                            <div class="top_mail mr-5">
+                                <div class="top_mail mr-5">
                                 <a class="align-middle" href="mailto:support@bigshop.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> support@bigshop.com</a>
                             </div>
-                            <!-- Top Social Area Start -->
+                        
                             <div class="top_social">
                                 <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -45,16 +44,16 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="top_single_area d-sm-flex align-items-center justify-content-end">
-                            <!-- Login Area Start -->
+                           
                             <div class="login_area">
                                 <p><a href="login.html" target="_blank"><i class="fa fa-lock" aria-hidden="true"></i> Login</a> or
                                     <a href="register.html" target="_blank"><i class="fa fa-user" aria-hidden="true"></i> Create an account</a></p>
                             </div>
-                            <!-- Get Support -->
+                           
                             <div class="get_help">
                                 <a href="faq.html" target="_blank"><i class="fa fa-life-ring" aria-hidden="true"></i> Get Help</a>
                             </div>
-                            <!-- Language Area Start -->
+                            
                             <div class="language_area">
                                 <div class="dropdown">
                                     <button class="btn dropdown-toggle" type="button" id="lang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">$USD</button>
@@ -69,7 +68,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Top Header Area End -->
 
         <!-- Bottom Header Area Start -->
