@@ -197,7 +197,7 @@
                                     <!-- User Meta Dropdown Area Start -->
                                     <ul class="user-meta-dropdown">
                                         <li class="user-title"> {{ Auth::user()->name }}</li>
-                                        <li><a href="profile.html">My Profile</a></li>
+                                        <li><a href="{{URL::to('/userprofile',['id' =>  Auth::user()->id ])}}">Profile</a></li>
                                         <li><a href="order-list.html">Orders List</a></li>
                                         <li><a href="wishlist.html">Wishlist</a></li>
 										

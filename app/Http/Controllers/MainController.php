@@ -18,6 +18,8 @@ use App\ShopName;
 use App\Product;
 use App\Category_model;
 use App\SubCategories;
+use App\ProductMang;
+use App\Userprofile;
 
 
 class MainController extends Controller {
@@ -80,11 +82,14 @@ public function store(Request $request){
 		public function product($shop_id){
 			$shop_id2=$shop_id;
 						
-
+            Session::put('shop_id', $shop_id2);
 			//$cat=Categories::all();
 			//$check2 = $request->input('check');
 			 //$sess=(Session()->get('area_name'));
-			 $data=Product::select('*')->where('shop_id',$shop_id2 )->get();
+			  $data=DB::table('product')
+            ->join('product_mang', 'product.product_id', '=', 'product_mang.product_id')
+            ->select('*')->where('product_mang.shop_id', '=', $shop_id2)
+            ->get();
 			// $data2=Product::select('*')->where('sub_cat_name',$check2 )->get();
     
           
@@ -115,8 +120,23 @@ public function store(Request $request){
     public function addToCart($id)
     {
 		
+        
+        
+         $product=DB::table('product')
+            ->join('product_mang', 'product.product_id', '=', 'product_mang.product_id')
+            ->select('*')->where('product.product_id', '=', $id)
+            ->get();
 		 
-        $product = Product::find($id);
+  //$product = Product::select('*')->where('product_id',$id)->get();
+        
+        
+       // $product=DB::table('product')
+          //  ->join('product_mang', 'product.product_id', '=', 'product_mang.product_id')->get();
+       // dd($product);
+        
+        
+        
+        foreach($product as $product){
 
         if(!$product) {
 
@@ -163,8 +183,8 @@ public function store(Request $request){
         ];
 
         session()->put('cart', $cart);
-
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        }
+              return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 
     public function update(Request $request)
@@ -201,6 +221,15 @@ public function store(Request $request){
 	public function login(){
 		return view('e-shop/login');
 		
-	}	
+	}
+    
+    public function userprofile(Request $request ,$id){
+       // dd($id);
+      
+        $users1=Userprofile::select('*')->where('id',$id)->get();
+        return view('e-shop.userprofile',compact('users1'));
+	} 
+
+
 
 }

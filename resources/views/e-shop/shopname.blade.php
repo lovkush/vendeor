@@ -6,33 +6,6 @@
 	<!-- HEADER -->
 	<header>
 		
-
-		
-	<!-- NAVIGATION -->
-	<div id="navigation">
-		<!-- container -->
-		<div class="container">
-			<div id="responsive-nav">
-				
-				<!-- menu nav -->
-				<div class="menu-nav">
-					<span class="menu-header">Menu <i class="fa fa-bars"></i></span>
-					<ul class="menu-list">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Shop</a></li>
-						
-						<li><a href="#">Sales</a></li>
-						
-					</ul>
-				</div>
-				<!-- menu nav -->
-			</div>
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /NAVIGATION -->
-
-
 <section class="shop_grid_area section_padding_50">
         <div class="container">          
             <div class="row">
@@ -52,7 +25,7 @@
                                         </div>
                                         <!-- Product Description -->
 										<div class="featured_pro_desc">
-                                <h5><a href="{{URL::to('/product',['projects1' => $row->shop_id])}}"><strong>{{$row->shop_name}}</strong></a></h5>
+                                <p><a href="{{URL::to('/product',['projects1' => $row->shop_id])}}">{{$row->shop_name}}</a></p>
                                 
                                 <div class="product_rating">
                                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -61,8 +34,8 @@
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                 </div>
-											<p>4</p>
                             </div>
+                                        
                                         <div class="product_description">
                                             
                                         </div>

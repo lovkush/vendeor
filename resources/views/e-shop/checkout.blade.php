@@ -1,16 +1,6 @@
 @include('layouts.app')
 
-    <!-- ***** Breadcumb Area Start ***** -->
-    <div class="breadcumb_area bg-img background-overlay-white" style="background-image: url({{asset('shop/./img/bg-img/breadcumb.jpg')}}">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                   
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ***** Breadcumb Area End ***** -->
+ 
 
     <!-- ***** Checkout Area Start ***** -->
     <div class="checkout_area section_padding_50">

@@ -77,7 +77,17 @@
     <!-- ***** Footer Area End ***** -->
 
 
-	<!-- jQuery Plugins -->
+	<!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="{{ asset('shop/js/jquery/jquery-2.2.4.min.js') }}"></script>
+    <!-- Popper js -->
+    <script src="../../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="{{ asset('shop/js/bootstrap.min.js') }}"></script>
+    <!-- Plugins js -->
+    <script src="{{ asset('shop/js/plugins.js') }}"></script>
+    <!-- Active js -->
+    <script src="{{ asset('shop/js/active.js') }}"></script>
+   
 	
 @if(Session()->get('area_name'))
 

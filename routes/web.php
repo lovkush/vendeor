@@ -57,3 +57,8 @@ Route::get('/home/', 'HomeController@index');
 Route::post('/submit/','HomeController@submit');
 
 Route::get('/checkout/','HomeController@checkout');
+
+//Route::get('/userprofile','MainController@userprofile');
+
+// Admin Products Routes
+	Route::get('/userprofile/{id}','MainController@userprofile');

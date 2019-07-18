@@ -38,11 +38,19 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-		$data=Product::select('*')->where('shop_id',2 )->get();
+       
+        $data=DB::table('product')
+        ->join('product_mang', 'product.product_id', '=', 'product_mang.product_id')
+        ->select('*')->where('product_mang.shop_id', '=', Session::get('shop_id'))
+        ->get();
+        // $data2=Product::select('*')->where('sub_cat_name',$check2 )->get();
+
+      
+        return view('home')->with(compact('data',2));
 			// $data2=Product::select('*')->where('sub_cat_name',$check2 )->get();
     
           
-			return view('home')->with(compact('data','shop_id2'));
+			//return view('home')->with(compact('data'));
 		/*$id=$request->input('id');
 		
 		print_r($id);

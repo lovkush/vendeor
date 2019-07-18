@@ -384,7 +384,7 @@ img {
 }
 
 .height-500 {
-    height: 500px !important;
+    height: 300px !important;
 }
 
 .height-600 {
@@ -900,6 +900,7 @@ img {
 .single_slide {
     background-position: center top;
     background-size: cover;
+    height: 300px;
     position: relative;
     z-index: 1;
 }
