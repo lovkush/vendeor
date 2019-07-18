@@ -665,8 +665,8 @@ $('select[name="area_name"]').empty();
     
     
     <!-- ***** Welcome Slides Area Start ***** -->
-    <section class="welcome_area home-2" style="width:60%; position:center">
-        <div class="welcome_slides" >
+    <section class="welcome_area home-2" style="width:60%">
+        <div class="welcome_slides" style="position:center">
 
             <!-- Single Slide Start -->
             <div class="single_slide home-3 height-500 bg-img background-overlay" style="background-image: url({{asset('shop/img/bg-img/slide-5.jpg')}}">
