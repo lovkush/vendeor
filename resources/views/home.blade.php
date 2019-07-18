@@ -214,7 +214,7 @@
 
 
 
-$categories=DB::table('ShopName')->select('*')->where('shop_id',Session::get('shop_id'))->get();
+$categories=DB::table('shopname')->select('*')->where('shop_id',Session::get('shop_id'))->get();
 
 
 
