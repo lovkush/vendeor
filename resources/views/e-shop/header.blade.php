@@ -27,7 +27,7 @@
     <!-- ***** Header Area Start ***** -->
     <header class="header_area home-3">
         <!-- Top Header Area Start -->
-       <div class="top_header_area">
+     <!--  <div class="top_header_area">
            <div class="container h-100">
                <div class="row h-100">
                    <div class="col-12 col-md-6 h-100">
@@ -44,7 +44,7 @@
                    
                </div>
            </div>
-       </div>
+       </div> -->
        <!-- Top Header Area End -->
        <div class="main_header_area" id="stickyHeader">
            <div class="container-fluid">
