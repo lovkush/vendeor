@@ -174,7 +174,7 @@
 
 
 
-$categories=DB::table('ShopName')->select('*')->where('shop_id',$shop_id2)->get();
+$categories=DB::table('shopname')->select('*')->where('shop_id',$shop_id2)->get();
 
 
 
